@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="float-container">
+
+    <div class="float-child">
+        <h2 class="a">Uploaded Image</h2>
+      <div class="green"><img src="{{ url_for('upload_img', filename=file_name) }}" class="img-fluid"></div>
+    </div>
+    
+    <div class="float-child">
+        <h2 class="a">Cartoonized Image</h2>
+      <div class="blue"><img src="{{ url_for('cartoon_img', filename=cartoon_file) }}" class="img-fluid"></div>
+    </div>
+    
+
+   
+  </div>
+ 
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block content %}
+
+
+
+<h2></h2>
+
+<div>
+    <form id="upload-file"  action="/predict" method="POST" enctype="multipart/form-data">
+      <center> {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        {% endfor %}
+      </center>
+
+      <div class="card">
+        <div class="card-header">
+         <h4> Upload Image </h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Browse Image</h5>
+          <p class="card-text"><input type="file" id="file" name="file" ></p>
+          <p>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Choose Style</label>
+            <select name="style" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+              <option value="default">Choose...</option>
+              <option value="Style6">Image Enhancement</option>
+              <option value="Style1">Cartoon</option>
+              <option value="Style2">Water color</option>
+              <option value="Style5">Pastel color</option>
+              <option value="Style3">Pencil Sketch</option>
+              <option value="Style4">Pencil Color Sketch</option>
+            </select>
+          
+          </p>
+          
+          <input type="submit" class="btn btn-primary " name="submit" value="Stylize">
+        </div>
+      </div>
+
+                
+
+       
+        
+          
+    </form>
+
+    
+        
+  
+   
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
